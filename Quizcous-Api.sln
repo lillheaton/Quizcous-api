@@ -5,6 +5,17 @@ VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quizcous-Api", "Quizcous-Api\Quizcous-Api.csproj", "{BD216EC1-7B09-4B8B-83EE-D369CB05ACE9}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PublishScripts", "PublishScripts", "{1D64A203-2B34-49BF-B1B7-19F07F2D1978}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\AzureWebsitePublishModule.psm1 = PublishScripts\AzureWebsitePublishModule.psm1
+		PublishScripts\Publish-WebApplicationWebsite.ps1 = PublishScripts\Publish-WebApplicationWebsite.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configurations", "Configurations", "{2CA0F789-2A78-4665-B612-853541B610E6}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\Configurations\Quizcous-Api-WAWS-dev.json = PublishScripts\Configurations\Quizcous-Api-WAWS-dev.json
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +29,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2CA0F789-2A78-4665-B612-853541B610E6} = {1D64A203-2B34-49BF-B1B7-19F07F2D1978}
 	EndGlobalSection
 EndGlobal

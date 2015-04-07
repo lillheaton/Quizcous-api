@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using Newtonsoft.Json.Serialization;
 using System.Web.Http;
-using System.Web.Routing;
 
 namespace Quizcous_Api
 {
@@ -12,6 +8,10 @@ namespace Quizcous_Api
         protected void Application_Start()
         {
             GlobalConfiguration.Configure(WebApiConfig.Register);
+
+            GlobalConfiguration.Configuration.Formatters.XmlFormatter.SupportedMediaTypes.Clear();            
+            var json = GlobalConfiguration.Configuration.Formatters.JsonFormatter;
+            json.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
         }
     }
 }
