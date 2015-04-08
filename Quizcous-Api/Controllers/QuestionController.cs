@@ -1,4 +1,6 @@
-﻿using Quizcous_Api.Models;
+﻿using System.Web.Http.Cors;
+
+using Quizcous_Api.Models;
 using System.Data.Entity;
 using System.Threading.Tasks;
 using System.Web.Http;
@@ -21,6 +23,7 @@ namespace Quizcous_Api.Controllers
         }
 
         [HttpGet]
+        [EnableCors(origins: "http://localhost:8080", headers: "*", methods: "*")]
         public async Task<object> Count()
         {
             return new { Count = await this.db.Questions.LongCountAsync() };
