@@ -7,6 +7,7 @@ using System.Web.Http;
 
 namespace Quizcous_Api.Controllers
 {
+    [EnableCors(origins: "http://localhost:8080,http://quizcous.azurewebsites.net", headers: "*", methods: "*")]
     public class QuestionController : ApiController
     {
         private readonly QuestionContext db;
@@ -23,7 +24,6 @@ namespace Quizcous_Api.Controllers
         }
 
         [HttpGet]
-        [EnableCors(origins: "http://localhost:8080", headers: "*", methods: "*")]
         public async Task<object> Count()
         {
             return new { Count = await this.db.Questions.LongCountAsync() };
